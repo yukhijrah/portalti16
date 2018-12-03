@@ -11,6 +11,7 @@ public class Network {
                 .baseUrl("https://ti16.herokuapp.com/")
                 //ini melakukan konversi dari json ke java object
                 .addConverterFactory(GsonConverterFactory.create())
+                //build it!
                 .build();
 
     }
