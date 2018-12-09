@@ -21,18 +21,17 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaHolder> {
     }
 
 
-    @NonNull
     @Override
-    public MahasiswaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MahasiswaHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mahasiswa, parent, false);
         MahasiswaHolder holder = new MahasiswaHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MahasiswaHolder holder, int position) {
+    public void onBindViewHolder(MahasiswaHolder holder, int position) {
         holder.txtNama.setText(mahasiswas.get(position).getName());
-        holder.txtNim.setText(mahasiswas.get(position).getName());
+        holder.txtNim.setText(mahasiswas.get(position).getNim());
     }
 
     @Override
