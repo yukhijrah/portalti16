@@ -14,7 +14,7 @@ public interface Routes {
     jika di deskripsikan, berarti :
     http://ti16-api.herokuapp.com/
      */
-    @GET("list_mahasiswa")
+    @GET("dev/list_mahasiswa")
     Call<DaftarMahasiswa> getMahasiswa();
 
     /*
@@ -23,7 +23,7 @@ public interface Routes {
     http://ti16-api.herokuapp.com/
      */
 
-    @POST("post_mahasiswa")
+    @POST("dev/insert_mahasiswa")
     @FormUrlEncoded
     Call<Mahasiswa> postMahasiswa(
             @Field("name") String name,
