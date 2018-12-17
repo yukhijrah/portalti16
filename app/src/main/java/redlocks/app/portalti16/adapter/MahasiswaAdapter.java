@@ -14,6 +14,7 @@ import redlocks.app.portalti16.DetailMahasiswaActivity;
 import redlocks.app.portalti16.R;
 import redlocks.app.portalti16.entity.Mahasiswa;
 import redlocks.app.portalti16.holder.MahasiswaHolder;
+import redlocks.app.portalti16.util.Consts;
 
 public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaHolder> {
 
@@ -32,13 +33,19 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaHolder> {
     @Override
     public MahasiswaHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mahasiswa, parent, false);
-        MahasiswaHolder holder = new MahasiswaHolder(view);
+        final MahasiswaHolder holder = new MahasiswaHolder(view);
 
         final Context context = holder.itemView.getContext();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //definisikan position untuk getMahasiswa
+                int adapterPosition = holder.getAdapterPosition();
+                Mahasiswa mahasiswa = mahasiswas.get(adapterPosition);
+
                 Intent detailIntent = new Intent(context, DetailMahasiswaActivity.class);
+                detailIntent.putExtra("mahasiswa", mahasiswa);
+                detailIntent.putExtra(Consts.KEY_ACTION_DETAIL, Consts.INTENT_EDIT);
                 context.startActivity(detailIntent);
             }
         });
