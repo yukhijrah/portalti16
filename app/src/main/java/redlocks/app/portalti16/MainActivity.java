@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         btnMahasiswa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(MainActivity.this, AddMahasiswaActivity.class);
+                Intent pindah = new Intent(MainActivity.this, DetailMahasiswaActivity.class);
                 startActivity(pindah);
             }
         });
