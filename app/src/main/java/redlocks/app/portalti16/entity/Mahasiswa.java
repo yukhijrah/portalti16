@@ -2,7 +2,7 @@ package redlocks.app.portalti16.entity;
 
 import java.io.Serializable;
 
-public class Mahasiswa implements Serializable  {
+public class Mahasiswa implements Serializable {
 
     private int id;
     private String name;
@@ -18,5 +18,13 @@ public class Mahasiswa implements Serializable  {
 
     public String getNim() {
         return nim;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNim(String nim) {
+        this.nim = nim;
     }
 }

@@ -21,14 +21,13 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaHolder> {
     private List<Mahasiswa> mahasiswas;
     private MahasiswaListener listener;
 
-    public MahasiswaAdapter (List<Mahasiswa> mahasiswas) {
+    public MahasiswaAdapter(List<Mahasiswa> mahasiswas) {
         this.mahasiswas = mahasiswas;
     }
 
     public void setListener(MahasiswaListener listener) {
         this.listener = listener;
     }
-
 
     @Override
     public MahasiswaHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,7 +38,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //definisikan position untuk getMahasiswa
+                //definisikan position untuk getMahasiswa.
                 int adapterPosition = holder.getAdapterPosition();
                 Mahasiswa mahasiswa = mahasiswas.get(adapterPosition);
 
@@ -75,4 +74,5 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaHolder> {
     public interface MahasiswaListener {
         void onDelete(int mhsId);
     }
+
 }
